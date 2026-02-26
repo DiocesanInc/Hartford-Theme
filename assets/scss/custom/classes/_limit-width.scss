@@ -1,0 +1,34 @@
+.limit-width,
+.limit-width-wide {
+  max-width: var(--limit-width, 90%);
+  margin: auto;
+}
+
+body:not(.home) .limit-width {
+  --limit-width: 90%;
+
+  @media screen and (min-width: $laptop) {
+    --limit-width: 80%;
+  }
+
+  &.footer-wrapper {
+    --limit-width: 90%;
+  }
+}
+
+.limit-width-laptop-up {
+  @media screen and (min-width: $laptop) {
+    max-width: var(--limit-width, 90%);
+    margin: auto;
+  }
+}
+
+.limit-width-laptop-down {
+  max-width: var(--limit-width, 90%);
+  margin: auto;
+
+  @media screen and (min-width: $laptop) {
+    max-width: none;
+    margin: unset;
+  }
+}
