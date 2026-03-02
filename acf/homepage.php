@@ -13,7 +13,7 @@ load_acf_file("tabs/parishes");
 //get acf fields for the hero
 $fields = acf_hero();
 // $fields = array_merge($fields, acf_welcome(), acf_featured_buttons());
-$fieldsP = array_merge(acf_hero(), acf_welcome(), acf_featured_buttons(), acf_parishes(), acf_mass_times(), acf_content_slider(), acf_calendar(), acf_news());
+$fieldsP = array_merge(acf_hero(), acf_welcome(), acf_featured_buttons(), acf_mass_times(), acf_content_slider(), acf_calendar(), acf_news());
 
 
 //if a custom section order for the homepage is set in template settings
