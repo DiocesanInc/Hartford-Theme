@@ -42,9 +42,9 @@ $icon_clr = getField("footer_icon_color", "options", true, 'white');
     <?php $donate = get_template_directory_uri() . "/assets/img/donate.jpg";
         $donateLink = get_field("donate_link","options");
         if ($donateLink):
-            echo acfLink($donateLink, '', "<img src='$donate'>");
+            echo acfLink($donateLink, 'donate-button', "<img src='$donate'>");
         else:
-            echo acfLink('https://appeal.archdioceseofhartford.org/donations/', '', "<img src='$donate'>");
+            echo acfLink('https://appeal.archdioceseofhartford.org/donations/', 'donate-button', "<img src='$donate'>");
         endif;
     ?>
 </div>

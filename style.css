@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A revised version of Diocesan's Alphonsus Hybrid for the Diocese of Hartford, CT
-Version: 1.7.5
+Version: 1.7.5.1
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -2162,6 +2162,9 @@ footer .footer-contact-inner .email {
   align-items: center;
   gap: 15px;
   font-size: calc(var(--fs-400, 16px) - 1px);
+}
+footer .footer-contact-inner .donate-button {
+  margin-top: 30px;
 }
 footer {
   --num-cols: 1;
