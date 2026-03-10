@@ -89,7 +89,7 @@ acf_add_local_field_group(array(
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
-                'width' => '33',
+                'width' => '25',
                 'class' => '',
                 'id' => '',
             ),
@@ -107,7 +107,7 @@ acf_add_local_field_group(array(
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
-                'width' => '33',
+                'width' => '25',
                 'class' => '',
                 'id' => '',
             ),
@@ -127,7 +127,7 @@ acf_add_local_field_group(array(
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
-                'width' => '33',
+                'width' => '25',
                 'class' => '',
                 'id' => '',
             ),
@@ -136,6 +136,21 @@ acf_add_local_field_group(array(
             'placeholder' => 'Get In Touch',
             'prepend' => '',
             'append' => '',
+        ),
+        array(
+            'key' => 'field_6196abe21fgdrfty',
+            'label' => 'Donate Link',
+            'name' => 'donate_link',
+            'type' => 'link',
+            'instructions' => '*Put a link on the donate image (optional). Default links to https://appeal.archdioceseofhartford.org/donations/',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '25',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'url',
         ),
     ),
     'location' => array(

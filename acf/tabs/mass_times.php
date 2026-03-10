@@ -102,7 +102,7 @@ function acf_mass_times()
 			'name' => 'parishes',
 			'aria-label' => '',
 			'type' => 'repeater',
-			'instructions' => '*Min. 2, Max. 7',
+			'instructions' => '*Min. 1, Max. 7',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -112,7 +112,7 @@ function acf_mass_times()
 			),
 			'layout' => 'block',
 			'pagination' => 0,
-			'min' => 2,
+			'min' => 1,
 			'max' => 7,
 			'collapsed' => 'field_65b9475c0ad14',
 			'button_label' => 'Add Parish',

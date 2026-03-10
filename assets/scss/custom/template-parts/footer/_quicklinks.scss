@@ -6,10 +6,14 @@
     display: grid;
     grid-template-columns: repeat(var(--num-cols, 1), 1fr);
     column-gap: 90px;
-    row-gap: 30px;
+    row-gap: 10px;
 
     @media screen and (min-width: $laptop) {
       --num-cols: 2;
+    }
+
+    li {
+      font-size: calc(var(--fs-400, 16px) - 1px);
     }
 
     li::marker {

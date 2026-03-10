@@ -6,4 +6,5 @@
 .footer-contact {
   display: grid;
   grid-template-rows: 120px auto;
+  font-size: calc(var(--fs-400, 16px) - 1px);
 }

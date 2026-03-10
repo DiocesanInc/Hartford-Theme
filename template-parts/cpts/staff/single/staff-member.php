@@ -46,6 +46,18 @@ $staffImage = has_post_thumbnail() ? get_the_post_thumbnail_url() : get_template
                 <?php endif; ?>
 
             </div>
+            
+            <?php if (get_the_content()) : ?>
+            <div class="links-container">
+                <a href="<?php echo get_the_permalink();?>" data-excerpt="<?php echo htmlspecialchars(get_the_content()); ?>"
+                    data-title="<?php echo htmlspecialchars(get_the_title()) ?>"
+                    data-image="<?php the_post_thumbnail_url(); ?>"
+                    class="the-button has-primary-color has-primary-border-color has-transparent-background-color"
+                    title="Read About <?php echo get_the_title() ? htmlspecialchars(get_the_title()) : 'Me'; ?>">
+                    Meet <?php the_title(); ?>
+                </a>
+            </div>
+            <?php endif; ?>
 
         </div>
     </div>
