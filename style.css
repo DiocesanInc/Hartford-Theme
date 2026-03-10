@@ -2163,9 +2163,6 @@ footer .footer-contact-inner .email {
   gap: 15px;
   font-size: calc(var(--fs-400, 16px) - 1px);
 }
-footer .footer-contact-inner .donate-button {
-  margin-top: 30px;
-}
 footer {
   --num-cols: 1;
 }
