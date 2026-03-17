@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A revised version of Diocesan's Alphonsus Hybrid for the Diocese of Hartford, CT
-Version: 1.7.5.2
+Version: 1.7.6.2
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -2319,6 +2319,56 @@ footer .site-info .limit-width .social-media a i {
   flex-direction: row;
   gap: 20px;
 }
+.site-header #mobile-top-bar {
+  width: 100%;
+  color: white;
+  padding-block: 40px;
+}
+@media screen and (min-width: 1280px) {
+  .site-header #mobile-top-bar {
+    display: none;
+  }
+}
+.site-header #mobile-top-bar a {
+  color: var(--font-clr, white);
+  font-weight: 400;
+  display: flex;
+}
+.site-header #mobile-top-bar .top-bar-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 40px;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-left,
+.site-header #mobile-top-bar .top-bar-inner .top-bar-right {
+  display: flex;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-left span,
+.site-header #mobile-top-bar .top-bar-inner .top-bar-right span {
+  margin-left: 1rem;
+  line-height: 1.5;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-left {
+  gap: 15px;
+  flex-direction: column;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-left i {
+  color: var(--icon-clr, white);
+  min-width: 18px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-right i {
+  color: var(--icon-clr, white);
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-right .social-media {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
 .site-header .header-nav {
   display: flex;
   justify-content: space-between;
@@ -3555,6 +3605,12 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
   font-size: clamp(36px, 4.5vw, 48px);
   margin-top: 0;
   text-align: center;
+  margin-bottom: 70px;
+}
+@media screen and (min-width: 992px) {
+  .parish-cluster .parish-scroll-title {
+    margin-bottom: 40px;
+  }
 }
 .parish-cluster.parishFlex {
   margin: 20px auto 0;
