@@ -1,0 +1,99 @@
+.archdiocese-news-container {
+  interpolate-size: allow-keywords;
+
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  background: #f4f4f4;
+
+  .archdiocese-news-heading {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  @media screen and (min-width: $laptop) {
+    .archdiocese-news-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .archdiocese-news-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+
+    .archdiocese-news-card-link {
+      display: block;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, black 100%);
+      }
+    }
+
+    .archdiocese-news-card-content {
+      z-index: 1;
+      position: absolute;
+      bottom: 40px;
+      left: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .archdiocese-news-card-title {
+        margin-block: 0;
+        color: white;
+        font-size: 1.375rem;
+      }
+
+      .archdiocese-news-card-date {
+        color: white;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+
+      .read-more {
+        height: 0;
+        opacity: 0;
+        transition: all 0.4s ease;
+
+        .read-more-icon {
+          transition: all 0.4s ease;
+        }
+        &:hover .read-more-icon {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    .archdiocese-news-card-image {
+      height: 100%;
+      object-fit: cover;
+      transition: scale 0.4s ease;
+    }
+
+    &:hover {
+      .archdiocese-news-card-image {
+        scale: 1.1;
+      }
+
+      .read-more {
+        height: fit-content;
+        opacity: 1;
+      }
+    }
+  }
+
+  .archdiocese-news-button-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}

@@ -89,9 +89,9 @@ if (acfIsInstalled()) {
     }
 
     if (acfIsInstalled()) {
+        load_acf_file("template-settings");
         load_acf_file("homepage");
         load_acf_file("page-calendar");
-        load_acf_file("template-settings");
         load_acf_file("ministry-groups");
         load_acf_file("post_category");
         load_acf_file("header-settings");

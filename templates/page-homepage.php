@@ -48,7 +48,8 @@ $skip = false;
                 //so it doesn't appear twice)
                 if (!$skip) :
                     //load template
-                    get_template_part("template-parts/homepage/$section", null, $args);
+                    $template = $section === "archdiocese_news" ? "archdiocese-news" : $section;
+                    get_template_part("template-parts/homepage/$template", null, $args);
                 else :
                     //set skip to false, to not skip more than needed
                     $skip = false;
@@ -61,14 +62,15 @@ $skip = false;
 
         else : ?>
 
-            <?php get_template_part("template-parts/homepage/mission"); ?>
-            <?php get_template_part("template-parts/homepage/featured-content"); ?>
-            <?php get_template_part("template-parts/homepage/news"); ?>
-            <?php get_template_part("template-parts/homepage/gallery"); ?>
-            <?php get_template_part("template-parts/homepage/banner"); ?>
-            <?php get_template_part("template-parts/homepage/contact"); ?>
+        <?php get_template_part("template-parts/homepage/mission"); ?>
+        <?php get_template_part("template-parts/homepage/featured-content"); ?>
+        <?php get_template_part("template-parts/homepage/news"); ?>
+        <?php get_template_part("template-parts/homepage/gallery"); ?>
+        <?php get_template_part("template-parts/homepage/banner"); ?>
+        <?php get_template_part("template-parts/homepage/contact"); ?>
 
         <?php endif; ?>
+
     </main>
 </div>
 

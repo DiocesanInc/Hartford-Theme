@@ -5167,6 +5167,7 @@ acf_add_local_field_group(array(
 						'id' => '',
 					),
 					'choices' => array(
+						'archdiocese_news' => 'Archdiocese News',
 						'banner' => 'Banner',
 						'calendar' => 'Calendar',
 						'contact' => 'Contact',
