@@ -34,7 +34,9 @@ if (have_rows("section_order", "options")) :
             //merge array. append new acf fields to the ones that already exist
             $fields = array_merge($fields, $new_tab);
         }
+
     endwhile;
+    $fields = array_merge($fields, acf_archdiocese_news());
 
 else :
     //load default order of sections if no custom order is set

@@ -19,9 +19,9 @@ $skip = false;
 
 <div class="content-area" id="primary">
     <main class="site-main page-template-homepage" id="main">
-        <?php get_template_part("template-parts/homepage/hero"); ?>
+        <?php get_template_part("template-parts/homepage/hero");
 
-        <?php
+        $has_archdiocese_news = false;
 
         if (have_rows("section_order", "options")) :
 
@@ -30,6 +30,11 @@ $skip = false;
 
                 //get section name
                 $section = get_sub_field("section");
+
+                //check if section is archdiocese news
+                if ($section === "archdiocese_news") {
+                    $has_archdiocese_news = true;
+                }
 
                 //determine if we need to wrap the next two sections
                 //(calendar and news)
@@ -62,13 +67,18 @@ $skip = false;
 
         else : ?>
 
-        <?php get_template_part("template-parts/homepage/mission"); ?>
-        <?php get_template_part("template-parts/homepage/featured-content"); ?>
-        <?php get_template_part("template-parts/homepage/news"); ?>
-        <?php get_template_part("template-parts/homepage/gallery"); ?>
-        <?php get_template_part("template-parts/homepage/banner"); ?>
-        <?php get_template_part("template-parts/homepage/contact"); ?>
+            <?php get_template_part("template-parts/homepage/mission"); ?>
+            <?php get_template_part("template-parts/homepage/featured-content"); ?>
+            <?php get_template_part("template-parts/homepage/news"); ?>
+            <?php get_template_part("template-parts/homepage/gallery"); ?>
+            <?php get_template_part("template-parts/homepage/banner"); ?>
+            <?php get_template_part("template-parts/homepage/contact"); ?>
 
+
+        <?php endif; ?>
+
+        <?php if (!$has_archdiocese_news) : ?>
+            <?php get_template_part("template-parts/homepage/archdiocese-news"); ?>
         <?php endif; ?>
 
     </main>
