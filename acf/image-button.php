@@ -1,0 +1,137 @@
+<?php
+
+acf_add_local_field_group(array(
+    'key' => 'group_61ba3ac10cb20',
+    'title' => 'Image Button',
+    'fields' => array(
+        array(
+            'key' => 'field_61ba3ac89878e',
+            'label' => 'Content',
+            'name' => 'is_manual',
+            'aria-label' => '',
+            'type' => 'true_false',
+            'instructions' => '“Auto” builds this from a selected page/post.
+“Manual” allows you to pick this button’s elements.',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'message' => '',
+            'default_value' => 0,
+            'ui' => 1,
+            'ui_on_text' => 'Manual',
+            'ui_off_text' => 'Auto',
+        ),
+        array(
+            'key' => 'field_61ba3d4a3d631',
+            'label' => 'Page',
+            'name' => 'page',
+            'aria-label' => '',
+            'type' => 'post_object',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_61ba3ac89878e',
+                        'operator' => '!=',
+                        'value' => '1',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'post_type' => '',
+            'taxonomy' => '',
+            'allow_null' => 0,
+            'multiple' => 0,
+            'return_format' => 'object',
+            'ui' => 1,
+            'bidirectional_target' => array(),
+        ),
+        array(
+            'key' => 'field_61ba3d6c3d632',
+            'label' => 'Background',
+            'name' => 'bkgd',
+            'aria-label' => '',
+            'type' => 'image',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_61ba3ac89878e',
+                        'operator' => '==',
+                        'value' => '1',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'array',
+            'preview_size' => 'medium',
+            'library' => 'all',
+            'min_width' => '',
+            'min_height' => '',
+            'min_size' => '',
+            'max_width' => '',
+            'max_height' => '',
+            'max_size' => '',
+            'mime_types' => '',
+        ),
+        array(
+            'key' => 'field_61ba3d873d633',
+            'label' => 'Link',
+            'name' => 'link',
+            'aria-label' => '',
+            'type' => 'link',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_61ba3ac89878e',
+                        'operator' => '==',
+                        'value' => '1',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'array',
+        ),
+    ),
+    'location' => array(
+        array(
+            array(
+                'param' => 'block',
+                'operator' => '==',
+                'value' => 'acf/image-button',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+    'show_in_rest' => 0,
+    'display_title' => '',
+    'allow_ai_access' => false,
+    'ai_description' => '',
+));

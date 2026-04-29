@@ -100,5 +100,14 @@ if (acfIsInstalled()) {
         load_acf_file("staff-archive-settings");
         load_acf_file("theme-colors");
         load_acf_file("grouped-calendar");
+        load_acf_file("accordion");
+        load_acf_file("image-banner");
+        load_acf_file("image-button");
+        load_acf_file("landing-page");
+        load_acf_file("ministries");
+        load_acf_file("ministries-page");
+        load_acf_file("posts");
+        load_acf_file("staff");
+        load_acf_file("staff-group");
     }
 }
