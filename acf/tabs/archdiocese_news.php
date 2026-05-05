@@ -67,10 +67,10 @@ function acf_archdiocese_news()
         ),
         array(
             'key' => 'field_662809a01a005',
-            'label' => 'Category ID',
-            'name' => 'archdiocese_news_category_id',
-            'type' => 'number',
-            'instructions' => '*WordPress category ID on archdioceseofhartford.org. Archdiocese News is currently 14.',
+            'label' => 'Show All Categories?',
+            'name' => 'archdiocese_news_all_categories',
+            'type' => 'true_false',
+            'instructions' => '*Turn on to pull the latest posts from all categories on archdioceseofhartford.org.',
             'required' => 0,
             'conditional_logic' => array(
                 array(
@@ -86,13 +86,43 @@ function acf_archdiocese_news()
                 'class' => '',
                 'id' => '',
             ),
-            'default_value' => 14,
-            'min' => 1,
-            'max' => '',
-            'placeholder' => 14,
-            'step' => 1,
+            'message' => '',
+            'default_value' => 1,
+            'ui_on_text' => '',
+            'ui_off_text' => '',
+            'ui' => 1,
+        ),
+        array(
+            'key' => 'field_662809a01a006',
+            'label' => 'Category IDs',
+            'name' => 'archdiocese_news_category_id',
+            'type' => 'text',
+            'instructions' => '*Enter one or more WordPress category IDs from archdioceseofhartford.org, separated by commas. Example: 14, 22, 35.',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_662809a01a002',
+                        'operator' => '==',
+                        'value' => '1',
+                    ),
+                    array(
+                        'field' => 'field_662809a01a005',
+                        'operator' => '!=',
+                        'value' => '1',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '25',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '14',
+            'placeholder' => '14, 22, 35',
             'prepend' => '',
             'append' => '',
+            'maxlength' => '',
         ),
         array(
             'key' => 'field_662809a01a007',
