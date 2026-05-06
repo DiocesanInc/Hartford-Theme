@@ -110,3 +110,11 @@ function my_acf_prepare_field($field)
 add_filter('acf/prepare_field/name=mass_times_sections', 'my_acf_prepare_field');
 // Apply to field with key "field_61a917a7b95ea".
 add_filter('acf/prepare_field/key=field_61a917a7b95ea', 'my_acf_prepare_field');
+
+function add_theme_caps() {
+    $role = get_role( 'parish_admin' ); 
+    if ( $role ) {
+        $role->add_cap( 'unfiltered_html' );
+    }
+}
+add_action( 'admin_init', 'add_theme_caps');
