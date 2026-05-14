@@ -89,7 +89,7 @@ if (!function_exists('hartford_archdiocese_news_get_items')) {
     function hartford_archdiocese_news_get_items($category_ids = null, $show_all_categories = true)
     {
         $query_args = array(
-            'per_page' => 4,
+            'per_page' => 6,
             '_embed' => 1,
         );
 

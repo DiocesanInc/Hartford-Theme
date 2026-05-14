@@ -12,7 +12,7 @@ jQuery(function ($) {
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-    asNavFor: '.mass-times-container .image2'
+    asNavFor: ".mass-times-container .image2",
   });
 
   var $sliderImage2 = $(".page-template-homepage .mass-times-left .image2");
@@ -24,7 +24,7 @@ jQuery(function ($) {
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-    asNavFor: '.mass-times-container .image1'
+    asNavFor: ".mass-times-container .image1",
   });
 
   var $sliderText = $(".page-template-homepage .mass-times-right-slides");
@@ -39,9 +39,9 @@ jQuery(function ($) {
     slidesToScroll: 1,
     infinite: true,
     mobileFirst: true,
-    asNavFor: '.mass-times-container .mass-slides'
+    asNavFor: ".mass-times-container .mass-slides",
   });
-  
+
   var $sliderDots = $(".page-template-homepage .mass-times-nav-left");
   $sliderDots.slick({
     dots: true,
@@ -51,9 +51,9 @@ jQuery(function ($) {
     slidesToScroll: 1,
     infinite: true,
     mobileFirst: true,
-    asNavFor: '.mass-times-container .mass-nav-l'
+    asNavFor: ".mass-times-container .mass-nav-l",
   });
-  
+
   // var $sliderDots = $(".page-template-homepage .mass-times-nav-right");
   // $sliderDots.slick({
   //   autoplay: true,
@@ -80,7 +80,9 @@ jQuery(function ($) {
   const $hero_slider = $(".page-template-homepage .hero-slider");
   const hero_parallax = $hero_slider.data("parallax");
   const hero_autoplay = $hero_slider.data("autoplay");
-  const hero_autoplay_speed = $hero_slider.data("autoplay-speed") ? $hero_slider.data("autoplay-speed") : "5000";
+  const hero_autoplay_speed = $hero_slider.data("autoplay-speed")
+    ? $hero_slider.data("autoplay-speed")
+    : "5000";
   const show_welcome = $(".page-template-homepage .hero").data("showWelcome");
   const hero_has_dots = show_welcome ? $hero_slider.data("hasDots") : false;
   const hero_has_arrows = $hero_slider.data("hasArrows");
@@ -106,12 +108,12 @@ jQuery(function ($) {
 
   /**Content Slider */
   const $content_slider = $(
-    ".page-template-homepage .content-slider-container [data-is-slider='true']"
+    ".page-template-homepage .content-slider-container [data-is-slider='true']",
   );
 
   isParallax($content_slider);
 
-  $content_slider.each(function(){
+  $content_slider.each(function () {
     $(this).on(
       "beforeChange",
       function (event, slick, currentSlide, nextSlide) {
@@ -119,7 +121,7 @@ jQuery(function ($) {
         $(this)
           .find(`.slick-dots li:nth-child(${nextSlide + 1})`)
           .addClass("slick-dot-active");
-      }
+      },
     );
     $(this).slick({
       autoplay: false,
@@ -174,7 +176,7 @@ jQuery(function ($) {
 
   /** Ministry Slider */
   const $ministryGroups = $(
-    ".ministries-container .ministry-slider .ministry-group"
+    ".ministries-container .ministry-slider .ministry-group",
   );
 
   $ministryGroups.slick({
@@ -207,6 +209,51 @@ jQuery(function ($) {
       },
     ],
   });
+
+  //Archdiocese News Slider
+  const archdiocese_news = $(".page-template-homepage .archdiocese-news-grid");
+
+  const initArchdioceseNewsSlider = () => {
+    console.log("Initializing Archdiocese News Slider");
+    archdiocese_news.slick({
+      autoplay: false,
+      dots: false,
+      arrows: true,
+      cssEase: "linear",
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      mobileFirst: true,
+      responsive: [
+        {
+          breakpoint: laptop,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: desktop,
+          settings: "unslick",
+        },
+      ],
+    });
+  };
+
+  $(window).resize(function () {
+    if (
+      $(window).width() >= desktop &&
+      archdiocese_news.hasClass("slick-initialized")
+    ) {
+      archdiocese_news.slick("unslick");
+    } else if (
+      $(window).width() < desktop &&
+      !archdiocese_news.hasClass("slick-initialized")
+    ) {
+      initArchdioceseNewsSlider();
+    }
+  });
+
+  initArchdioceseNewsSlider();
 
   $(".page-template-homepage .parishButtons").slick({
     autoplay: false,
