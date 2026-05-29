@@ -1,10 +1,10 @@
 .archdiocese-news-container {
   interpolate-size: allow-keywords;
 
-  margin-top: 2rem;
+  margin-top: 7rem;
   padding-top: 1rem;
   padding-bottom: 2rem;
-  background: #f4f4f4;
+  background: #ebebeb;
 
   .slick-arrow {
     background: white;
@@ -35,6 +35,7 @@
   .archdiocese-news-heading {
     text-align: center;
     margin-bottom: 4rem;
+    font-size: clamp(38px, 3vw, 48px);
   }
 
   @media screen and (min-width: $desktop) {
