@@ -69,7 +69,7 @@ if ($show && $news) : ?>
 
         <div class="view-more-button-wrapper">
             <a href="<?php echo get_category_link($news); ?>" class="the-button" title="View all Events">
-                View All
+                View All News
             </a>
         </div>
 
