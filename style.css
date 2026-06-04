@@ -2363,7 +2363,7 @@ footer .site-info .limit-width .social-media a i {
   }
 }
 .site-header #mobile-top-bar a {
-  color: var(--font-clr, white);
+  color: var(--sidebar-top-level-default-font-color, var(--font-clr, white));
   font-weight: 400;
   display: flex;
   text-decoration: none;
@@ -2394,6 +2394,10 @@ footer .site-info .limit-width .social-media a i {
   align-items: center;
   display: flex;
   justify-content: center;
+}
+.site-header #mobile-top-bar .top-bar-inner .top-bar-left a:hover {
+  background: var(--sidebar-top-level-hover-bg-color, transparent);
+  color: var(--sidebar-top-level-hover-font-color, var(--color-white));
 }
 .site-header #mobile-top-bar .top-bar-inner .top-bar-right i {
   color: var(--icon-clr, white);
