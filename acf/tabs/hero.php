@@ -115,7 +115,7 @@ function acf_hero()
                 'id' => '',
             ),
             'collapsed' => 'field_6182f4b5311c3',
-            'min' => 0,
+            'min' => 1,
             'max' => 0,
             'layout' => 'table',
             'button_label' => '',
