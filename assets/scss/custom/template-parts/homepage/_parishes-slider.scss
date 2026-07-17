@@ -141,6 +141,9 @@
           &.slick-active button::before {
             background-color: var(--clr-quaternary);
           }
+          &:only-child {
+            display: none !important;
+          }
         }
       }
     }
