@@ -60,6 +60,7 @@ if (!function_exists('hartford_archdiocese_news_get_items')) {
         $query_args = array(
             'per_page' => 6,
             '_embed' => 1,
+            'categories' => 14,
         );
 
         $endpoint = add_query_arg(
