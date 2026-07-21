@@ -54,54 +54,13 @@ if (!function_exists('hartford_archdiocese_news_prepare_item')) {
     }
 }
 
-if (!function_exists('hartford_archdiocese_news_parse_category_ids')) {
-    function hartford_archdiocese_news_parse_category_ids($category_ids)
-    {
-        if (is_array($category_ids)) {
-            $category_ids = implode(',', $category_ids);
-        }
-
-        $category_ids = trim((string) $category_ids);
-
-        if ($category_ids === '') {
-            return array();
-        }
-
-        $category_ids = preg_split('/\s*,\s*/', $category_ids);
-
-        if (!is_array($category_ids)) {
-            return array();
-        }
-
-        $category_ids = array_values(
-            array_unique(
-                array_filter(
-                    array_map('absint', $category_ids)
-                )
-            )
-        );
-
-        return $category_ids;
-    }
-}
-
 if (!function_exists('hartford_archdiocese_news_get_items')) {
-    function hartford_archdiocese_news_get_items($category_ids = null, $show_all_categories = true)
+    function hartford_archdiocese_news_get_items()
     {
         $query_args = array(
             'per_page' => 6,
             '_embed' => 1,
         );
-
-        if (!$show_all_categories) {
-            $parsed_category_ids = hartford_archdiocese_news_parse_category_ids($category_ids);
-
-            if (empty($parsed_category_ids)) {
-                $parsed_category_ids = array(14);
-            }
-
-            $query_args['categories'] = $parsed_category_ids;
-        }
 
         $endpoint = add_query_arg(
             $query_args,
@@ -147,25 +106,7 @@ if (!function_exists('hartford_archdiocese_news_get_items')) {
     }
 }
 
-$show = get_field('show_archdiocese_news');
-
-if ($show === null || $show === '') {
-    $show = true;
-}
-
-if (!$show) {
-    return;
-}
-
-$eyebrow = getField('archdiocese_news_eyebrow', false, false, 'Catholic Transcript Online');
-$heading = getField('archdiocese_news_heading', false, false, 'Archdiocese News');
-$show_all_categories = getField('archdiocese_news_all_categories', false, false, true);
-$category_ids = getField('archdiocese_news_category_id', false, false, '14');
-$button = get_field('archdiocese_news_button');
-$button_url = $button['url'] ?? 'https://archdioceseofhartford.org/category/news/archdiocese-news/';
-$button_title = $button['title'] ?? 'More News';
-$button_target = $button['target'] ?? '_blank';
-$items = hartford_archdiocese_news_get_items($category_ids, $show_all_categories);
+$items = hartford_archdiocese_news_get_items();
 ?>
 
 <?php if (!empty($items)) : ?>
@@ -173,12 +114,10 @@ $items = hartford_archdiocese_news_get_items($category_ids, $show_all_categories
         <div class="limit-width">
 
             <div class="archdiocese-news-header">
-                <?php if ($heading) : ?>
-                    <h2
-                        class="archdiocese-news-heading has-text-decoration has-tertiary-background-color-after text-decoration-is-centered">
-                        <?php echo esc_html($heading); ?>
-                    </h2>
-                <?php endif; ?>
+                <h2
+                    class="archdiocese-news-heading has-text-decoration has-tertiary-background-color-after text-decoration-is-centered">
+                    Archdiocese News
+                </h2>
 
 
             </div>
@@ -216,15 +155,13 @@ $items = hartford_archdiocese_news_get_items($category_ids, $show_all_categories
                 <?php endforeach; ?>
             </div>
 
-            <?php if ($button_url && $button_title) : ?>
-                <div class="archdiocese-news-button-wrapper">
+            <div class="archdiocese-news-button-wrapper">
 
-                    <a class="the-button" href="<?php echo esc_url($button_url); ?>"
-                        target="<?php echo esc_attr($button_target); ?>" rel="noopener noreferrer">
-                        <?php echo esc_html($button_title); ?>
-                    </a>
-                </div>
-            <?php endif; ?>
+                <a class="the-button" href="https://archdioceseofhartford.org/category/news/archdiocese-news/"
+                    target="_blank" rel="noopener noreferrer">
+                    More News
+                </a>
+            </div>
         </div>
 
     </section>
