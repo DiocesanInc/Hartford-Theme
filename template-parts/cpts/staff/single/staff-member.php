@@ -16,7 +16,10 @@ $staffImage = has_post_thumbnail() ? get_the_post_thumbnail_url() : get_template
 <article id="post-<?php echo $post->post_name; ?>" <?php post_class(); ?>>
 
     <div class="entry-content staff-member">
-        <img class="staff-member-image" src="<?php echo $staffImage; ?>;" />
+        <?php if (!get_field("hide_staff_photos", "option")): ?>
+            <img class="staff-member-image" src="<?php echo $staffImage; ?>;" />
+        <?php endif; ?>
+
         <div class="staff-member-info">
             <div class="staff-member-title-wrapper">
                 <?php the_title("<span class='staff-member-title'>", "</span>"); ?>

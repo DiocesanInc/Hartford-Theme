@@ -1,10 +1,10 @@
 /*!
-Theme Name: Hartford
+Theme Name: Hartford Parent Theme
 Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: A revised version of Diocesan's Alphonsus Hybrid for the Diocese of Hartford, CT
-Version: 1.8.5
+Version: 1.8.6.1
 Tested up to: 8.0
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -1833,6 +1833,8 @@ input[type=submit] {
 }
 
 form .gform_body input[type=text],
+form .gform_body input[type=email],
+form .gform_body input[type=tel],
 form .gform_body textarea {
   font-size: clamp(20px, 2vw, 23px) !important;
   padding: 15px 25px !important;
@@ -1843,15 +1845,21 @@ form .gform_body textarea {
   -webkit-appearance: none;
 }
 form .gform_body input[type=text]:hover,
+form .gform_body input[type=email]:hover,
+form .gform_body input[type=tel]:hover,
 form .gform_body textarea:hover {
   border-color: #111111 !important;
 }
 form .gform_body input[type=text]:focus-visible,
+form .gform_body input[type=email]:focus-visible,
+form .gform_body input[type=tel]:focus-visible,
 form .gform_body textarea:focus-visible {
   border-color: #111111 !important;
 }
 @media screen and (min-width: 992px) {
   form .gform_body input[type=text],
+  form .gform_body input[type=email],
+  form .gform_body input[type=tel],
   form .gform_body textarea {
     padding: 16px 30px !important;
   }
@@ -3672,7 +3680,7 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 .welcome-container {
   position: relative;
   text-align: center;
-  padding-block: 9vh 24.5vh;
+  padding-block: 80px 220px;
 }
 .welcome-container .welcome-line {
   color: var(--color);
@@ -4291,6 +4299,9 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
 }
 .mass-times-container > .limit-width-laptop-up .mass-times-nav-left .slick-dots li.slick-active button::before {
   background-color: var(--clr-quaternary);
+}
+.mass-times-container > .limit-width-laptop-up .mass-times-nav-left .slick-dots li:only-child {
+  display: none !important;
 }
 .mass-times-container > .limit-width-laptop-up .mass-times-nav-right {
   margin: 0px 50px var(--homepage-section-spacing);
