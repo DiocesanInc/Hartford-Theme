@@ -1,0 +1,39 @@
+@media only screen and (max-width: 1280px) {
+    /* Remove hover effect on search and top bar items for all sites. Also add 20px to mobile menu width */
+    #mega-menu-wrap-menu-1 .mega-menu-toggle + #mega-menu-menu-1 {
+        width: 330px;
+        right: -330px;
+        &> li.mega-menu-item.search-container.mobile-search:hover {
+            background: none;
+        }
+        #mobile-top-bar .top-bar-inner .top-bar-left a:hover {
+            background: none;
+            color: var(--sidebar-top-level-default-font-color, var(--font-clr, white));
+        }
+    }
+    #mega-menu-wrap-menu-1 .mega-menu-toggle.mega-menu-open + #mega-menu-menu-1 {
+        right: 0;
+    }
+    #mega-menu-wrap-menu-1 .mega-menu-toggle.mega-menu-open ~ button.mega-close {
+        right: calc(min(100vw - 40px, 330px));
+    }
+    
+    /* Default White, Black, & Red color scheme for all sites that use default AOH colors. */
+    .main-navigation:not(.custom-colors) {
+        --sidebar-top-level-default-bg-color: #fff;
+        --sidebar-top-level-default-font-color: #000;
+        --sidebar-top-level-hover-bg-color: var(--clr-primary);
+        --sidebar-top-level-hover-font-color: #fff;
+        --sidebar-submenu-default-bg-color: #fff;
+        --sidebar-submenu-default-font-color: #000;
+        --sidebar-submenu-hover-bg-color: var(--clr-primary);
+        --sidebar-submenu-hover-font-color: #fff;
+        #mobile-top-bar .top-bar-inner .top-bar-left i {
+            color: #000;
+        }
+        #mega-menu-wrap-menu-1 #mega-menu-menu-1 .mega-menu-item.search-container .search-form .search-field {
+            border-bottom: 1px solid #000;
+            color: #000;
+        }
+    }
+}
