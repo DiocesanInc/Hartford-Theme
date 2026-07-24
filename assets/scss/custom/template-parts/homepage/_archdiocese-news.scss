@@ -109,10 +109,12 @@
     }
 
     .archdiocese-news-card-image {
-      width: 100%;
       height: 100%;
       object-fit: cover;
       transition: scale 0.4s ease;
+      @media screen and (max-width: 992px){
+        width: 100%;
+      }
     }
 
     &:hover {
