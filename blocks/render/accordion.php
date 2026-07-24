@@ -12,7 +12,7 @@
 // create id attribute for specific styling
 $id = 'accordion-' . $block['id'];
 
-$headingFontColor = get_field("accordion_colors", "options") ? get_field("accordion_colors", "options")["heading_font_color"] : "white";
+$headingFontColor = "white";
 $headingFontColorHover = get_field("accordion_colors", "options") ? get_field("accordion_colors", "options")["heading_font_color_hover"] : "white";
 $headingFontColorActive = get_field("accordion_colors", "options") ? get_field("accordion_colors", "options")["heading_font_color_active"] : "white";
 
@@ -84,7 +84,8 @@ $contentBackgroundColor = get_field("accordion_colors", "options") ? get_field("
         margin: 0;
         padding-right: 2rem;
         cursor: pointer;
-        color: <?php echo $headingFontColor; ?>;
+        color: <?php echo $headingFontColor;
+                ?>;
     }
 
     #<?php echo "$id .accordion-section-title:hover h6";
@@ -118,7 +119,7 @@ $contentBackgroundColor = get_field("accordion_colors", "options") ? get_field("
         left: 50%;
         transition: transform .4s ease;
         position: absolute;
-        color: var(--clr-quaternary);
+        color: white;
     }
 
     #<?php echo "$id .accordion-section-title:hover .accordion-toggle .fa-plus";
@@ -126,7 +127,8 @@ $contentBackgroundColor = get_field("accordion_colors", "options") ? get_field("
     #<?php echo "$id .accordion-section-title:hover .accordion-toggle .fa-minus";
 
         ?> {
-        color: <?php echo $headingFontColorHover; ?>;
+        color: <?php echo $headingFontColorHover;
+                ?>;
     }
 
     #<?php echo "$id .accordion-section-title .accordion-toggle .fa-plus";
@@ -164,7 +166,8 @@ $contentBackgroundColor = get_field("accordion_colors", "options") ? get_field("
     #<?php echo "$id .accordion-section-title.ui-accordion-header-active .accordion-toggle .fa-minus";
 
         ?> {
-        color: <?php echo $headingFontColorActive; ?>;
+        color: <?php echo $headingFontColorActive;
+                ?>;
     }
 
     #<?php echo "$id .accordion-content";
