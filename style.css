@@ -3025,6 +3025,7 @@ main .entry-header #crumbs a {
   font-size: clamp(18px, 2vw, 24px);
   color: white;
   margin-bottom: 40px;
+  word-wrap: break-word;
 }
 .content-slider-container[data-alignment=left][data-style=has-overlay] .content-slider-post::before {
   right: auto;
