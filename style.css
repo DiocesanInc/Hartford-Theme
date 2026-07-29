@@ -4586,6 +4586,11 @@ body:not(.ios) .content-slider-container[data-parallax=true] .content-slider-pos
     width: 100%;
   }
 }
+@media screen and (min-width: 1550px) {
+  .archdiocese-news-container .archdiocese-news-card .archdiocese-news-card-image {
+    width: 100%;
+  }
+}
 .archdiocese-news-container .archdiocese-news-card:hover .archdiocese-news-card-image {
   scale: 1.1;
 }
