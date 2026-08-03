@@ -94,7 +94,8 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 $myUpdateChecker->setBranch('main');
 
 //Optional: If you're using a private repository, specify the access token like this:
-// $myUpdateChecker->setAuthentication('');
+$token = trim(@file_get_contents('/opt/php-secrets/github.token'));
+$myUpdateChecker->setAuthentication($token);
 
 function my_acf_prepare_field($field)
 {
@@ -111,10 +112,11 @@ add_filter('acf/prepare_field/name=mass_times_sections', 'my_acf_prepare_field')
 // Apply to field with key "field_61a917a7b95ea".
 add_filter('acf/prepare_field/key=field_61a917a7b95ea', 'my_acf_prepare_field');
 
-function add_theme_caps() {
-    $role = get_role( 'parish_admin' ); 
-    if ( $role ) {
-        $role->add_cap( 'unfiltered_html' );
+function add_theme_caps()
+{
+    $role = get_role('parish_admin');
+    if ($role) {
+        $role->add_cap('unfiltered_html');
     }
 }
-add_action( 'admin_init', 'add_theme_caps');
+add_action('admin_init', 'add_theme_caps');
