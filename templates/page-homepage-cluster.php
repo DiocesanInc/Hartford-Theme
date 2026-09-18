@@ -23,7 +23,7 @@ $skip = false;
         <?php get_template_part("template-parts/homepage/welcome"); ?>
         <?php get_template_part("template-parts/homepage/featured_buttons"); ?>
         <?php get_template_part("template-parts/homepage/parishes"); ?>
-        
+
         <?php
 
         // if (have_rows("section_order", "options")) :
@@ -52,7 +52,7 @@ $skip = false;
         //             if($section === 'mass_times'):
         //                 $style = get_field('cluster_style');
         //                 if($style != 'slider'):
-        //                     get_template_part("template-parts/homepage/mass_times"); 
+        //                     get_template_part("template-parts/homepage/mass_times");
         //                 else: endif;
         //             else:
         //                 //check if section needs to be skipped
@@ -72,26 +72,30 @@ $skip = false;
         //         endif;
         //     endwhile;
 
-        // else : ?>
-        <?php $style = get_field('cluster_style');
-                if($style != 'slider'): ?>
-            <?php get_template_part("template-parts/homepage/mass_times"); ?>
-        <?php else: endif;?>
-        <?php get_template_part("template-parts/homepage/content_slider"); ?>
-        <?php 
-            $add_wrapper =
-                get_field("show_news") &&       //if news section is displayed
-                get_field("show_calendar") &&   //if calendar section is displayed
-                get_field("news_position");   //if news section is next to calendar
+        // else :
         ?>
-        <?php if($add_wrapper):
-                get_template_part("template-parts/homepage/cols", null, array("calendar", "news")); 
-                else: 
-                get_template_part("template-parts/homepage/calendar");
-                get_template_part("template-parts/homepage/news"); 
-                endif;?>
-                 
-        <?php //endif; ?> 
+        <?php $style = get_field('cluster_style');
+        if ($style != 'slider'): ?>
+            <?php get_template_part("template-parts/homepage/mass_times"); ?>
+        <?php else: endif; ?>
+        <?php get_template_part("template-parts/homepage/content_slider"); ?>
+        <?php
+        $add_wrapper =
+            get_field("show_news") &&       //if news section is displayed
+            get_field("show_calendar") &&   //if calendar section is displayed
+            get_field("news_position");   //if news section is next to calendar
+        ?>
+        <?php if ($add_wrapper):
+            get_template_part("template-parts/homepage/cols", null, array("calendar", "news"));
+        else:
+            get_template_part("template-parts/homepage/calendar");
+            get_template_part("template-parts/homepage/news");
+        endif; ?>
+
+        <?php //endif;
+        ?>
+
+        <?php get_template_part("template-parts/homepage/archdiocese-news"); ?>
     </main>
 </div>
 
