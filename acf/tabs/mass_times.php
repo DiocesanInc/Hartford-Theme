@@ -429,7 +429,7 @@ function acf_mass_times()
                                     ),
                                     'default_value' => '',
                                     'maxlength' => '',
-                                    'placeholder' => 'española',
+                                    'placeholder' => 'español',
                                     'prepend' => '',
                                     'append' => '',
                                     'parent_repeater' => 'field_65cbab5460972',

@@ -45,7 +45,7 @@ $tag = !empty($is_preview) ? 'div' : 'a';
 
 ?>
 
-<<?php echo $tag; ?>a href="<?php echo $url; ?>" class="button-link image-button-block<?php echo $align_class; ?>"
+<<?php echo $tag; ?> href="<?php echo $url; ?>" class="button-link image-button-block<?php echo $align_class; ?>"
     target="<?php echo $target; ?>" title="<?php echo $title; ?>" id="<?php echo $id; ?>">
     <div class="background-image" style="background-image: url(<?php echo $bkgd; ?>)">
 
